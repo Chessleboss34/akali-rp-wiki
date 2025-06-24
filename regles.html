@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Règles RP — Wiki Akali RP</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0d0b1f;
+        color: white;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+      }
+      header,
+      footer {
+        background-color: #18142d;
+        transition: all 0.3s ease;
+      }
+      header {
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 800;
+        color: #b277ff;
+        text-shadow: 0 0 10px #b277ff;
+      }
+      nav a {
+        margin: 0 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+      nav a:hover,
+      nav a.active {
+        background-color: #4b3b72;
+      }
+      .main {
+        text-align: center;
+        padding: 80px 20px 40px;
+      }
+      .main h1 {
+        font-size: 42px;
+        color: #b277ff;
+        text-shadow: 0 0 18px #b277ff;
+        margin-bottom: 15px;
+      }
+      .main p {
+        font-size: 18px;
+        color: #ccc;
+        margin-bottom: 40px;
+      }
+      .section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 40px 20px;
+      }
+      .card {
+        background-color: #1e1b32;
+        padding: 24px;
+        border-radius: 16px;
+        width: 280px;
+        box-shadow: 0 0 20px rgba(178, 119, 255, 0.15);
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+      }
+      .card h3 {
+        color: #b277ff;
+        margin-bottom: 10px;
+      }
+      .highlight {
+        background-color: #2e2b40;
+        padding: 8px 12px;
+        border-radius: 8px;
+        display: inline-block;
+        margin-top: 10px;
+        color: #ff4f4f;
+        font-weight: bold;
+      }
+      footer {
+        margin-top: 60px;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #aaa;
+      }
+      footer a {
+        color: #b277ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #theme-toggle {
+        position: fixed;
+        bottom: 15px;
+        left: 15px;
+        background: #b277ff;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 10px #b277ff;
+        z-index: 1000;
+      }
+      body.light-mode {
+        background-color: #f5f5f5;
+        color: #111;
+      }
+      body.light-mode header,
+      body.light-mode footer {
+        background-color: #ddd;
+      }
+      body.light-mode .card {
+        background-color: #ffffff;
+        color: #111;
+      }
+      body.light-mode nav a {
+        color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">📚 Wiki Akali RP</div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="regles.html" class="active">Règles</a>
+        <a href="metiers.html">Métiers</a>
+        <a href="objets.html">Objets</a>
+        <a href="commandes.html">Commandes</a>
+      </nav>
+    </header>
+
+    <section class="main">
+      <h1>📜 Règlement RP</h1>
+      <p>Les règles essentielles pour un RP propre et fun.</p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>Respect</h3>
+        <p>Tout propos haineux, insultant ou toxique est sanctionné.</p>
+      </div>
+      <div class="card">
+        <h3>PowerGaming</h3>
+        <p>Ne forcez pas une action RP irréaliste ou abusée.</p>
+      </div>
+      <div class="card">
+        <h3>MetaGaming</h3>
+        <p>Interdiction d’utiliser des infos hors-RP (ex: vocal Discord).</p>
+      </div>
+      <div class="card">
+        <h3>FearRP</h3>
+        <p>
+          Craignez pour votre vie quand c’est nécessaire (ex: armes pointées).
+        </p>
+      </div>
+    </section>
+
+    <div id="theme-toggle">🌙 Mode Sombre</div>
+
+    <footer>⚖️ Suis les règles ! | <a href="index.html">Retour</a></footer>
+
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      function applyTheme(theme) {
+        if (theme === "light") {
+          document.body.classList.add("light-mode");
+          toggle.innerHTML = "☀️ Mode Clair";
+        } else {
+          document.body.classList.remove("light-mode");
+          toggle.innerHTML = "🌙 Mode Sombre";
+        }
+        localStorage.setItem("theme", theme);
+      }
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      applyTheme(savedTheme);
+      toggle.addEventListener("click", () => {
+        const current = document.body.classList.contains("light-mode")
+          ? "light"
+          : "dark";
+        const newTheme = current === "light" ? "dark" : "light";
+        applyTheme(newTheme);
+      });
+    </script>
+  </body>
+</html>
